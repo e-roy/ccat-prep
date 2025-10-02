@@ -11,7 +11,7 @@ export default defineConfig({
   },
   root: ".",
   publicDir: "public",
-  base: "/",
+  base: process.env.NODE_ENV === "production" ? "/ccat-prep/" : "/",
   build: {
     outDir: "dist",
     sourcemap: true,
