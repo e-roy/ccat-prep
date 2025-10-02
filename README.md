@@ -131,7 +131,6 @@ If you run into any issues or have questions about using this tool for CCAT prep
 
 - **Report bugs or issues**: [Open an issue](https://github.com/your-username/ccat-prep-tool/issues)
 - **Request features**: Suggest new question types or improvements
-- **Get help**: Check the [technical documentation](@file-structure.mdc)
 
 ---
 

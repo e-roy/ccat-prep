@@ -57,7 +57,7 @@ export default function Navigation() {
   };
 
   const handleGitHubStar = () => {
-    window.open("https://github.com/your-username/ccat-prep-tool", "_blank");
+    window.open("https://github.com/e-roy/ccat-prep", "_blank");
   };
 
   return (
