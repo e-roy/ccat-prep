@@ -108,9 +108,7 @@ export default function VocabularyCard({ words }: VocabularyCardProps) {
 
       await enhancedTTS.speak(fullText, {
         voiceName: selectedVoice?.name, // Use selected voice from store
-        rate: 0.8,
-        pitch: 1.0,
-        volume: 1.0,
+        // Platform-optimized settings are handled by enhancedTTS
 
         onStart: () => {
           setIsPlaying(true);
@@ -135,12 +133,16 @@ export default function VocabularyCard({ words }: VocabularyCardProps) {
       setIsPlaying(false);
       setCurrentUtterance(null);
 
-      // Fallback to basic TTS
+      // Fallback to basic TTS with platform-optimized settings
       if ("speechSynthesis" in window) {
         const utterance = new SpeechSynthesisUtterance(fullText);
-        utterance.rate = 0.8;
-        utterance.pitch = 1;
-        utterance.volume = 1;
+
+        // Platform-optimized settings for better clarity
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+        utterance.rate = isIOS ? 0.6 : 0.8; // Slower on iOS for better clarity
+        utterance.pitch = isIOS ? 0.9 : 1.0; // Slightly lower pitch on iOS
+        utterance.volume = 1.0;
 
         utterance.onstart = () => setIsPlaying(true);
         utterance.onend = () => {

@@ -51,6 +51,20 @@ class EnhancedTTS {
     });
   }
 
+  private isIOS(): boolean {
+    return /iPad|iPhone|iPod/.test(navigator.userAgent);
+  }
+
+  private getOptimalSettings() {
+    const isIOS = this.isIOS();
+
+    return {
+      rate: isIOS ? 0.6 : 0.8, // Slower on iOS for better clarity
+      pitch: isIOS ? 0.9 : 1.0, // Slightly lower pitch on iOS
+      volume: 1.0,
+    };
+  }
+
   private selectBestVoice(): void {
     // Prefer high-quality, local voices
     const localVoices = this.voices.filter((voice) => voice.localService);
@@ -58,18 +72,18 @@ class EnhancedTTS {
       (voice) => voice.lang.startsWith("en") && voice.localService
     );
 
-    // Priority order for voice selection
+    // Priority order for voice selection (iOS-optimized)
     const preferredVoiceNames = [
       "Microsoft Zira Desktop",
       "Microsoft David Desktop",
       "Microsoft Mark Desktop",
       "Google US English",
-      "Alex",
-      "Samantha",
-      "Victoria",
-      "Daniel",
-      "Moira",
-      "Tessa",
+      "Alex", // macOS
+      "Samantha", // macOS
+      "Victoria", // iOS
+      "Daniel", // iOS
+      "Moira", // iOS
+      "Tessa", // iOS
     ];
 
     // Try to find a preferred voice
@@ -127,10 +141,11 @@ class EnhancedTTS {
         utterance.voice = this.preferredVoice;
       }
 
-      // Set speech parameters
-      utterance.rate = options.rate ?? 0.8; // Slightly slower for better comprehension
-      utterance.pitch = options.pitch ?? 1.0;
-      utterance.volume = options.volume ?? 1.0;
+      // Set speech parameters - use platform-optimized defaults if not specified
+      const optimalSettings = this.getOptimalSettings();
+      utterance.rate = options.rate ?? optimalSettings.rate;
+      utterance.pitch = options.pitch ?? optimalSettings.pitch;
+      utterance.volume = options.volume ?? optimalSettings.volume;
 
       // Event handlers
       utterance.onstart = () => {
