@@ -11,8 +11,19 @@ self.addEventListener("install", (event) => {
   );
 });
 
-// Fetch event - serve from cache, fallback to network
+// Fetch event - handle navigation and caching
 self.addEventListener("fetch", (event) => {
+  // Handle navigation requests (SPA routing)
+  if (event.request.mode === "navigate") {
+    event.respondWith(
+      caches.match("/").then((response) => {
+        return response || fetch(event.request);
+      })
+    );
+    return;
+  }
+
+  // Handle other requests with caching
   event.respondWith(
     caches.match(event.request).then((response) => {
       // Return cached version or fetch from network
