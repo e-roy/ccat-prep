@@ -1,0 +1,199 @@
+---
+alwaysApply: true
+---
+
+# CCAT Prep PWA - File Structure & Architecture
+
+## Project Overview
+
+This is a **Progressive Web App (PWA)** for vocabulary learning and cognitive assessment built with React, TypeScript, and modern web technologies. The app features AI-powered quiz generation, text-to-speech functionality, and comprehensive vocabulary training across multiple categories.
+
+## Tech Stack
+
+- **Framework**: React 19.1.0 with TypeScript
+- **Build Tool**: Vite 7.1.7
+- **Language**: TypeScript 5.x
+- **Styling**: Tailwind CSS 4.x with class-variance-authority and clsx
+- **UI Components**: Radix UI primitives
+- **State Management**: Zustand 5.0.8
+- **HTTP Client**: Axios 1.12.2
+- **AI Integration**: OpenAI 6.0.1
+- **Icons**: Lucide React 0.544.0
+- **PWA Features**: Service Worker, Web App Manifest
+
+## Core Architecture
+
+### 📁 `/src` - Source Code
+
+The main application source code organized by feature domains.
+
+#### 🔧 `/lib` - Core Libraries & Business Logic
+
+- **`ai/`** - AI integration and services
+  - `aiService.ts` - Main AI service interface
+  - `aiStore.ts` - AI-related state management
+  - `quizAI.ts` - Quiz-specific AI functionality
+- **`quiz/`** - Quiz engine and question generation
+  - **`generators/`** - Question type generators
+    - `mathGenerator.ts` - Mathematical questions
+    - `logicalGenerator.ts` - Logic and reasoning questions
+    - `spatialGenerator.ts` - Spatial reasoning questions
+    - `verbalGenerator.ts` - Verbal and vocabulary questions
+    - `helpers.ts` - Shared utilities for generators
+  - `questionGenerator.ts` - Main question generation coordinator
+  - `quizEngine.ts` - Quiz state and flow management
+  - `scoring.ts` - Answer evaluation and scoring logic
+- **`history/`** - Quiz history and results
+  - `historyStore.ts` - Persistent storage for quiz results
+- **`router.tsx`** - Client-side routing configuration
+- **`ttsStore.ts`** - Text-to-speech state management
+- **`utils.ts`** - General utility functions
+- **`enhancedTTS.ts`** - Advanced text-to-speech functionality
+
+#### 🎨 `/components` - Reusable UI Components
+
+- **`ui/`** - Base UI components (shadcn/ui style)
+  - Core components: `button.tsx`, `card.tsx`, `dialog.tsx`, `input.tsx`, etc.
+  - Charts: `donut-chart.tsx`, `progress.tsx`
+  - Form elements: `checkbox.tsx`, `radio-group.tsx`, `select.tsx`
+  - Feedback: `alert.tsx`, `badge.tsx`, `loading-spinner.tsx`
+- **`quiz/`** - Quiz-specific components
+  - `QuizInterface.tsx` - Main quiz container
+  - `QuestionCard.tsx` - Individual question display
+  - `QuizTimer.tsx` - Timer functionality
+  - `QuizResults.tsx` - Results display
+  - `CategorySelectionDialog.tsx` - Category picker
+  - `ConfirmClearDialog.tsx` - Confirmation dialogs
+- **`TTSSettings.tsx`** - Text-to-speech configuration
+- **`VocabularyCard.tsx`** - Vocabulary learning cards
+- **`QuizMode.tsx`** - Quiz mode selection
+- **`Navigation.tsx`** - App navigation
+
+#### 📊 `/data` - Static Data & Assets
+
+- **`vocabulary/`** - Vocabulary database
+  - Individual letter files (`a.json` through `z.json`) containing word definitions
+  - `index.ts` - Vocabulary data aggregator
+
+#### 📄 `/pages` - Page Components
+
+- `LandingPage.tsx` - App entry point
+- `ListenPage.tsx` - Audio/listening mode
+- `HistoryPage.tsx` - Quiz history and analytics
+- `ReviewQuestionsPage.tsx` - Question review and practice
+- `SettingsPage.tsx` - User preferences and configuration
+
+#### 🔧 `/types` - TypeScript Definitions
+
+- `quiz.ts` - Quiz-related type definitions
+
+#### 📱 Root Level Files
+
+- `App.tsx` - Main app component
+- `index.tsx` - App entry point
+- `index.css` - Global styles
+
+### 📁 `/public` - Static Assets
+
+- `favicon.ico` - App favicon
+- `icons/icon.svg` - App icon
+- `manifest.json` - PWA manifest
+- `sw.js` - Service worker for offline functionality
+- `index.html` - HTML template
+
+### 🏗️ Configuration Files
+
+- `vite.config.ts` - Vite build configuration
+- `tsconfig.json` - TypeScript configuration
+- `tsconfig.node.json` - Node.js TypeScript config
+- `eslint.config.mjs` - ESLint configuration
+- `postcss.config.mjs` - PostCSS configuration
+- `tailwind.config.ts` - Tailwind CSS configuration (if present)
+- `components.json` - shadcn/ui configuration
+
+## Package Dependencies Breakdown
+
+### Production Dependencies
+
+- **React Ecosystem**
+
+  - `react` (19.1.0) - UI framework
+  - `react-dom` (19.1.0) - DOM rendering
+
+- **UI Component Library**
+
+  - `@radix-ui/*` packages - Headless UI components for accessibility
+
+- **Styling & Design**
+
+  - `tailwindcss` (4.x) - Utility-first CSS framework
+  - `@tailwindcss/postcss` (4.1.13) - PostCSS integration
+  - `class-variance-authority` (0.7.1) - Component variant management
+  - `clsx` (2.1.1) - Conditional CSS class composition
+  - `tailwind-merge` (3.3.1) - Tailwind class merging utilities
+  - `tw-animate-css` (1.3.8) - Animation utilities
+
+- **State Management**
+
+  - `zustand` (5.0.8) - Lightweight state management
+
+- **HTTP & API**
+
+  - `axios` (1.12.2) - HTTP client for API requests
+  - `openai` (6.0.1) - OpenAI API integration
+
+- **Icons & Visual**
+  - `lucide-react` (0.544.0) - Icon library
+  - `embla-carousel-react` (8.6.0) - Carousel component
+
+### Development Dependencies
+
+- **TypeScript**
+
+  - `typescript` (5.x) - Type checking
+  - `@types/react` & `@types/react-dom` - React type definitions
+
+- **Build Tools**
+
+  - `vite` (7.1.7) - Fast build tool and dev server
+  - `@vitejs/plugin-react` (4.7.0) - React integration for Vite
+
+- **Code Quality**
+  - `eslint` (9.x) - Code linting
+  - `@eslint/eslintrc` (3.x) - ESLint configuration
+
+## Key Features Architecture
+
+### 🤖 AI Integration
+
+- OpenAI API integration for dynamic question generation
+- Context-aware quiz creation based on user performance
+- Intelligent difficulty adjustment
+
+### 📝 Quiz Engine
+
+- Multiple question types: Math, Logic, Spatial, Verbal
+- Adaptive difficulty scaling
+- Comprehensive scoring and analytics
+- Persistent history tracking
+
+### 🔊 Text-to-Speech
+
+- Multi-language support
+- Configurable voice settings
+- Offline pronunciation practice
+
+### 📱 PWA Capabilities
+
+- Offline functionality via service worker
+- Installable on mobile devices
+- Push notifications support
+- App-like native experience
+
+### 🎯 Vocabulary System
+
+- Alphabetized word database (A-Z JSON files)
+- Category-based learning
+- Progress tracking and statistics
+
+This architecture provides a scalable, maintainable foundation for a comprehensive vocabulary learning and cognitive assessment platform.
