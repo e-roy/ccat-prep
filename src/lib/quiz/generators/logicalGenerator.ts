@@ -99,26 +99,16 @@ export class LogicalQuestionGenerator {
   // TODO: needs improvement
   private static createLetterSequence(): {
     question: string;
-    options: [string, string, string, string];
+    options: [string, string, string, string, string];
     correctAnswer: number;
   } {
     const sequences = [
       {
         question:
-          "What would be the next group of letters in the following series?\n\nbadg … dbdf … fcde … hddd",
-        correct: "ieee",
-        options: ["ieee", "heee", "geee", "feee"] as [
+          "What would be the next group of letters in the following series?\n\n akje  … ajif … aihg … ahgh",
+        correct: "agfi",
+        options: ["agff", "agfi", "aggi", "aifh", "aifi"] as [
           string,
-          string,
-          string,
-          string
-        ],
-      },
-      {
-        question:
-          "What would be the next group of letters in the following series?\n\nabcd … cdef … efgh … ghij",
-        correct: "ijkl",
-        options: ["ijkl", "hijk", "ghij", "fghi"] as [
           string,
           string,
           string,
@@ -127,9 +117,22 @@ export class LogicalQuestionGenerator {
       },
       {
         question:
-          "What would be the next group of letters in the following series?\n\nwxyz … yzab … abcd … cdef",
-        correct: "efgh",
-        options: ["efgh", "defg", "cdef", "bcde"] as [
+          "What would be the next group of letters in the following series?\n\n badg … dbdf … fcde … hddd",
+        correct: "jedc",
+        options: ["jcdc", "iede", "kedd", "ghdc", "jedc"] as [
+          string,
+          string,
+          string,
+          string,
+          string
+        ],
+      },
+      {
+        question:
+          "What would be the next group of letters in the following series?\n\n de … eg … gh … hj",
+        correct: "jk",
+        options: ["li", "ik", "jk", "jl", "jm"] as [
+          string,
           string,
           string,
           string,
@@ -325,24 +328,24 @@ export class LogicalQuestionGenerator {
       {
         question:
           "Assume the first two statements are true. Is the final statement: 1) True, 2) False, or 3) Uncertain based on the information provided?\n\nSusan is taller than Lisa.\nLisa is shorter than Jean.\nJean is taller than Susan.",
-        correct: "False",
-        options: ["True", "False", "Uncertain"] as [string, string, string],
-      },
-      {
-        question:
-          "Assume the first two statements are true. Is the final statement: 1) True, 2) False, or 3) Uncertain based on the information provided?\n\nAll birds can fly.\nPenguins are birds.\nPenguins can fly.",
-        correct: "False",
-        options: ["True", "False", "Uncertain"] as [string, string, string],
-      },
-      {
-        question:
-          "Assume the first two statements are true. Is the final statement: 1) True, 2) False, or 3) Uncertain based on the information provided?\n\nIf it rains, the ground gets wet.\nThe ground is wet.\nIt is raining.",
         correct: "Uncertain",
         options: ["True", "False", "Uncertain"] as [string, string, string],
       },
       {
         question:
-          "Assume the first two statements are true. Is the final statement: 1) True, 2) False, or 3) Uncertain based on the information provided?\n\nJohn is older than Mary.\nMary is older than Tom.\nJohn is older than Tom.",
+          "Assume the first two statements are true. Is the final statement: 1) True, 2) False, or 3) Uncertain based on the information provided?\n\nBrad is friends with Justin.\nJustin is friends with Pat.\nBrad is not friends with Pat.",
+        correct: "Uncertain",
+        options: ["True", "False", "Uncertain"] as [string, string, string],
+      },
+      {
+        question:
+          "Assume the first two statements are true. Is the final statement: 1) True, 2) False, or 3) Uncertain based on the information provided?\n\nTim is younger than Joe.\nBrenda is older than Joe.\nTim is older than Brenda.",
+        correct: "False",
+        options: ["True", "False", "Uncertain"] as [string, string, string],
+      },
+      {
+        question:
+          "Assume the first two statements are true. Is the final statement: 1) True, 2) False, or 3) Uncertain based on the information provided?\n\nEvery person at the meeting voted in favor of the merger.\nJulia was at the meeting.\nJulia voted in favor of the merger.",
         correct: "True",
         options: ["True", "False", "Uncertain"] as [string, string, string],
       },

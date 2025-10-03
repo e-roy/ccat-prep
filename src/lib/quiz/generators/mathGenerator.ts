@@ -234,18 +234,29 @@ export class MathQuestionGenerator {
     correctAnswer: number;
     options: [string, string, string, string];
   } {
-    const totalDrinks = Math.floor(Math.random() * 200) + 200; // 200-400 drinks
     const cheapPrice = 2;
     const expensivePrice = 5;
-    const totalSales = Math.floor(Math.random() * 500) + 800; // $800-$1300
 
-    // Calculate how many $2 drinks were sold
+    // Generate valid numbers that ensure positive results
     // Let x = number of $2 drinks, y = number of $5 drinks
     // x + y = totalDrinks
     // 2x + 5y = totalSales
     // Solving: y = (totalSales - 2*totalDrinks) / 3
-    const expensiveDrinks = Math.floor((totalSales - 2 * totalDrinks) / 3);
-    const cheapDrinks = totalDrinks - expensiveDrinks;
+    // We need: totalSales - 2*totalDrinks > 0 and divisible by 3
+    // And totalDrinks - y > 0
+
+    let totalDrinks: number;
+    let totalSales: number;
+    let cheapDrinks: number;
+
+    // Keep generating until we get valid positive numbers
+    do {
+      totalDrinks = Math.floor(Math.random() * 200) + 200; // 200-400 drinks
+      totalSales = Math.floor(Math.random() * 500) + 800; // $800-$1300
+
+      const expensiveDrinks = Math.floor((totalSales - 2 * totalDrinks) / 3);
+      cheapDrinks = totalDrinks - expensiveDrinks;
+    } while (cheapDrinks <= 0 || (totalSales - 2 * totalDrinks) % 3 !== 0);
 
     const question = `A restaurant sold ${totalDrinks} drinks in a night. Some of the drinks were sold for $${cheapPrice} each and the rest for $${expensivePrice} each. If the total sales of drinks for the night was $${totalSales}, how many $${cheapPrice} drinks were sold?`;
     const { options, correctIndex } = generateNumericOptions(cheapDrinks);
