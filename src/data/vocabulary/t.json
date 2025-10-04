@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "word": "Tarnished",
+    "meaning": "damaged or spoiled; lost luster or brightness",
+    "example": "The silverware had tarnished after years of neglect.",
+    "antonym": "polished"
+  },
+  {
+    "word": "Tepid",
+    "meaning": "only slightly warm; lukewarm; showing little enthusiasm",
+    "example": "The audience gave only tepid applause to the mediocre performance.",
+    "antonym": "enthusiastic"
+  },
+  {
+    "word": "Torpid",
+    "meaning": "mentally or physically inactive; lethargic",
+    "example": "The torpid bear remained in its den throughout the winter months.",
+    "antonym": "energetic"
+  }
+]

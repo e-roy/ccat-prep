@@ -72,6 +72,12 @@
     "antonym": "support"
   },
   {
+    "word": "Impugned",
+    "meaning": "challenged or called into question",
+    "example": "The witness's credibility was impugned by contradictory evidence.",
+    "antonym": "supported"
+  },
+  {
     "word": "Inchoate",
     "meaning": "just begun and so not fully formed or developed; rudimentary",
     "example": "The artist's inchoate ideas gradually developed into a masterpiece.",
@@ -94,6 +100,12 @@
     "meaning": "wanting to avoid activity or exertion; lazy",
     "example": "The indolent teenager spent the entire summer lounging by the pool.",
     "antonym": "industrious"
+  },
+  {
+    "word": "Inevitability",
+    "meaning": "the quality of being certain to happen",
+    "example": "The inevitability of change is one of life's few constants.",
+    "antonym": "avoidability"
   },
   {
     "word": "Ineluctable",
@@ -163,7 +175,7 @@
   },
   {
     "word": "Inure",
-    "meaning": "to accustom (someone) to something, especially something unpleasant Invective – insulting, abusive, or highly critical language",
+    "meaning": "to accustom (someone) to something, especially something unpleasant",
     "example": "Years of criticism helped inure her to negative feedback.",
     "antonym": "sensitize"
   },
@@ -190,5 +202,11 @@
     "meaning": "traveling from place to place",
     "example": "The itinerant musician traveled from town to town performing concerts.",
     "antonym": "settled"
+  },
+  {
+    "word": "Incongruity",
+    "meaning": "the state of being incongruous; incompatibility",
+    "example": "There was an incongruity between his words and his actions.",
+    "antonym": "congruity"
   }
 ]

@@ -13,8 +13,20 @@
   },
   {
     "word": "Recant",
-    "meaning": "to say that one no longer holds an opinion or belief 300- well done – You did it",
+    "meaning": "to say that one no longer holds an opinion or belief",
     "example": "Under pressure, the witness was forced to recant his earlier testimony.",
     "antonym": "affirm"
+  },
+  {
+    "word": "Recalibration",
+    "meaning": "the action of calibrating something again or differently",
+    "example": "The recalibration of the equipment improved its accuracy significantly.",
+    "antonym": "misalignment"
+  },
+  {
+    "word": "Repute",
+    "meaning": "the opinion generally held of someone or something; reputation",
+    "example": "The university's repute for academic excellence attracts students from around the world.",
+    "antonym": "disrepute"
   }
 ]

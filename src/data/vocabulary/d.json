@@ -24,6 +24,18 @@
     "antonym": "impropriety"
   },
   {
+    "word": "Declines",
+    "meaning": "becomes smaller, fewer, or less; decreases",
+    "example": "The company's profits decline significantly during the recession.",
+    "antonym": "increases"
+  },
+  {
+    "word": "Decrement",
+    "meaning": "a decrease or reduction in the size, extent, or quantity of something",
+    "example": "The decrement in sales was attributed to increased competition.",
+    "antonym": "increment"
+  },
+  {
     "word": "Deference",
     "meaning": "humble submission and respect",
     "example": "He showed deference to his elderly grandmother's wishes.",
@@ -42,6 +54,12 @@
     "antonym": "accidental"
   },
   {
+    "word": "Deliberates",
+    "meaning": "engages in long and careful consideration",
+    "example": "The jury deliberates for hours before reaching a verdict.",
+    "antonym": "rushes"
+  },
+  {
     "word": "Delineate",
     "meaning": "to describe or portray something precisely",
     "example": "The map clearly delineates the boundaries between the two countries.",
@@ -52,6 +70,12 @@
     "meaning": "to criticize unfairly; to disparage",
     "example": "It's unfair to denigrate his achievements based on one mistake.",
     "antonym": "praise"
+  },
+  {
+    "word": "Deprecate",
+    "meaning": "to express disapproval of",
+    "example": "The committee voted to deprecate the proposed policy changes.",
+    "antonym": "approve"
   },
   {
     "word": "Deride",
@@ -116,7 +140,7 @@
   {
     "word": "Disabuse",
     "meaning": "to persuade someone that an idea or belief is mistaken",
-    "example": "The teacher hoped to disabuse students of their misconceptions.",
+    "example": "I had to disabuse him of the notion that success comes without hard work.",
     "antonym": "mislead"
   },
   {
@@ -154,6 +178,12 @@
     "meaning": "essentially different in kind",
     "example": "The group consisted of disparate individuals with different backgrounds.",
     "antonym": "similar"
+  },
+  {
+    "word": "Disquieted",
+    "meaning": "worried or uneasy",
+    "example": "The strange noises in the house left the family disquieted throughout the night.",
+    "antonym": "calm"
   },
   {
     "word": "Dissemble",

@@ -6,6 +6,12 @@
     "antonym": "verbose"
   },
   {
+    "word": "Lambaste",
+    "meaning": "criticize harshly",
+    "example": "The critic lambasted the film for its poor acting and weak plot.",
+    "antonym": "praise"
+  },
+  {
     "word": "Lament",
     "meaning": "to mourn or express sorrow",
     "example": "The community gathered to lament the loss of their beloved library.",
@@ -40,6 +46,12 @@
     "meaning": "humor or frivolity, especially in a serious situation",
     "example": "The funeral director's inappropriate levity offended the grieving family.",
     "antonym": "gravity"
+  },
+  {
+    "word": "Likelihood",
+    "meaning": "the state or fact of something's being likely; probability",
+    "example": "There's a high likelihood of rain tomorrow according to the forecast.",
+    "antonym": "improbability"
   },
   {
     "word": "Loquacious",

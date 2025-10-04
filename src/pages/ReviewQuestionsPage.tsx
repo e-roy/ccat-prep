@@ -68,12 +68,9 @@ export function ReviewQuestionsPage({
               Back to History
             </Button>
             <div className="flex-1">
-              <h1 className="text-2xl font-bold text-slate-800">
-                Review Questions - Session {session.id.slice(-8)}
+              <h1 className="text-lg sm:text-2xl font-bold text-slate-800">
+                Review Questions
               </h1>
-              <p className="text-slate-600">
-                Review your answers and see the correct solutions
-              </p>
             </div>
             <div className="flex items-center gap-2">
               <Badge variant={percentage >= 60 ? "default" : "destructive"}>

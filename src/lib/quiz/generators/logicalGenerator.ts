@@ -95,8 +95,6 @@ export class LogicalQuestionGenerator {
   }
 
   // CCAT-style question creation methods
-
-  // TODO: needs improvement
   private static createLetterSequence(): {
     question: string;
     options: [string, string, string, string, string];
@@ -139,13 +137,44 @@ export class LogicalQuestionGenerator {
           string
         ],
       },
+      {
+        question:
+          "What would be the next group of letters in the following series?\n\n aaaa … bcdf … cegk … dgjp",
+        correct: "eimu",
+        options: ["eimu", "eilu", "ehmu", "ejku", "eikt"] as [
+          string,
+          string,
+          string,
+          string,
+          string
+        ],
+      },
+      {
+        question:
+          "What would be the next group of letters in the following series?\n\n jlbc … inaf … hpzi … gryl",
+        correct: "ftxo",
+        options: ["ftxo", "fvzp", "ftxp", "fvxo", "ftzo"] as [
+          string,
+          string,
+          string,
+          string,
+          string
+        ],
+      },
     ];
 
     const sequence = sequences[Math.floor(Math.random() * sequences.length)];
+    const shuffledOptions = shuffleArray(sequence.options) as [
+      string,
+      string,
+      string,
+      string,
+      string
+    ];
     return {
       question: sequence.question,
-      options: sequence.options,
-      correctAnswer: sequence.options.indexOf(sequence.correct),
+      options: shuffledOptions,
+      correctAnswer: shuffledOptions.indexOf(sequence.correct),
     };
   }
 
@@ -318,7 +347,6 @@ export class LogicalQuestionGenerator {
     return shuffleArray(options) as [string, string, string, string];
   }
 
-  // TODO: needs improvement
   private static createLogicalStatement(): {
     question: string;
     options: [string, string, string];
@@ -347,6 +375,24 @@ export class LogicalQuestionGenerator {
         question:
           "Assume the first two statements are true. Is the final statement: 1) True, 2) False, or 3) Uncertain based on the information provided?\n\nEvery person at the meeting voted in favor of the merger.\nJulia was at the meeting.\nJulia voted in favor of the merger.",
         correct: "True",
+        options: ["True", "False", "Uncertain"] as [string, string, string],
+      },
+      {
+        question:
+          "Assume the first two statements are true. Is the final statement: 1) True, 2) False, or 3) Uncertain based on the information provided?\n\nAll the members of the chess team received awards.\nRita received an award.\nRita is a member of the chess team.",
+        correct: "Uncertain",
+        options: ["True", "False", "Uncertain"] as [string, string, string],
+      },
+      {
+        question:
+          "Assume the first two statements are true. Is the final statement: 1) True, 2) False, or 3) Uncertain based on the information provided?\n\nThose who like oranges also like grapes.\nHal likes grapes.\nHal does not like oranges.",
+        correct: "Uncertain",
+        options: ["True", "False", "Uncertain"] as [string, string, string],
+      },
+      {
+        question:
+          "Assume the first two statements are true. Is the final statement: 1) True, 2) False, or 3) Uncertain based on the information provided?\n\nAll the roses in the garden are pink.\nAll the daffodils in the garden are yellow.\nAll the flowers in the garden are either pink or yellow.",
+        correct: "Uncertain",
         options: ["True", "False", "Uncertain"] as [string, string, string],
       },
     ];
@@ -387,10 +433,16 @@ export class LogicalQuestionGenerator {
 
     const comparison =
       comparisons[Math.floor(Math.random() * comparisons.length)];
+    const shuffledOptions = shuffleArray(comparison.options) as [
+      string,
+      string,
+      string,
+      string
+    ];
     return {
       question: comparison.question,
-      options: comparison.options,
-      correctAnswer: comparison.options.indexOf(comparison.correct),
+      options: shuffledOptions,
+      correctAnswer: shuffledOptions.indexOf(comparison.correct),
     };
   }
 }

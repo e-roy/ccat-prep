@@ -100,7 +100,7 @@ export default function VocabularyCard({ words }: VocabularyCardProps) {
       return;
     }
 
-    const fullText = `${currentWord.word}. ${currentWord.meaning}. Example: ${currentWord.example}`;
+    const fullText = `${currentWord.word}. ... ${currentWord.meaning}. Example: ${currentWord.example}`;
 
     try {
       // Set playing state
@@ -108,6 +108,7 @@ export default function VocabularyCard({ words }: VocabularyCardProps) {
 
       await enhancedTTS.speak(fullText, {
         voiceName: selectedVoice?.name, // Use selected voice from store
+        pauseBetweenSections: true, // Add longer pauses for better iOS compatibility
         // Platform-optimized settings are handled by enhancedTTS
 
         onStart: () => {
@@ -135,7 +136,9 @@ export default function VocabularyCard({ words }: VocabularyCardProps) {
 
       // Fallback to basic TTS with platform-optimized settings
       if ("speechSynthesis" in window) {
-        const utterance = new SpeechSynthesisUtterance(fullText);
+        // Add longer pauses for better iOS compatibility
+        const processedText = fullText.replace(/\.\s+/g, ". ... ");
+        const utterance = new SpeechSynthesisUtterance(processedText);
 
         // Platform-optimized settings for better clarity
         const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);

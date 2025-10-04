@@ -117,6 +117,7 @@ class EnhancedTTS {
       onStart?: () => void;
       onEnd?: () => void;
       onError?: (error: SpeechSynthesisErrorEvent) => void;
+      pauseBetweenSections?: boolean;
     } = {}
   ): Promise<void> {
     if (!this.isInitialized) {
@@ -127,7 +128,14 @@ class EnhancedTTS {
       // Cancel any ongoing speech
       speechSynthesis.cancel();
 
-      const utterance = new SpeechSynthesisUtterance(text);
+      // Add longer pauses between sections for better iOS compatibility
+      let processedText = text;
+      if (options.pauseBetweenSections) {
+        // Replace periods followed by spaces with longer pauses
+        processedText = text.replace(/\.\s+/g, ". ... ");
+      }
+
+      const utterance = new SpeechSynthesisUtterance(processedText);
 
       // Use specified voice or preferred voice
       if (options.voiceName) {

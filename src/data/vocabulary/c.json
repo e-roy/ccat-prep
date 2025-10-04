@@ -120,10 +120,28 @@
     "antonym": "clarify"
   },
   {
+    "word": "Congeniality",
+    "meaning": "the quality of being pleasant and agreeable",
+    "example": "Her congeniality made her popular among all her colleagues.",
+    "antonym": "hostility"
+  },
+  {
     "word": "Connoisseur",
     "meaning": "an expert judge in matters of taste",
     "example": "The wine connoisseur could identify the vintage by taste alone.",
     "antonym": "amateur"
+  },
+  {
+    "word": "Conscientious",
+    "meaning": "wishing to do what is right, especially to do one's work or duty well and thoroughly",
+    "example": "The conscientious student always completed her assignments on time and with great care.",
+    "antonym": "negligent"
+  },
+  {
+    "word": "Contextualize",
+    "meaning": "to place or study in context",
+    "example": "To understand the novel, we must contextualize it within its historical period.",
+    "antonym": "isolate"
   },
   {
     "word": "Convoluted",
@@ -142,6 +160,12 @@
     "meaning": "having or showing too great a readiness to believe things",
     "example": "The credulous child believed every word of the fairy tale.",
     "antonym": "skeptical"
+  },
+  {
+    "word": "Culminates",
+    "meaning": "reaches a climax or point of highest development",
+    "example": "The festival culminates in a spectacular fireworks display.",
+    "antonym": "begins"
   },
   {
     "word": "Culpable",

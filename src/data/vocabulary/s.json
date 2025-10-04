@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "word": "Significance",
+    "meaning": "the quality of being worthy of attention; importance",
+    "example": "The significance of this discovery cannot be overstated.",
+    "antonym": "insignificance"
+  },
+  {
+    "word": "Sullied",
+    "meaning": "damaged or tarnished; made dirty or impure",
+    "example": "The politician's sullied reputation made it difficult to gain public trust.",
+    "antonym": "clean"
+  },
+  {
+    "word": "Supplanted",
+    "meaning": "superseded and replaced",
+    "example": "The old system was supplanted by more efficient technology.",
+    "antonym": "preserved"
+  },
+  {
+    "word": "Susceptibility",
+    "meaning": "the state or fact of being likely or liable to be influenced or harmed by a particular thing",
+    "example": "His susceptibility to colds made him avoid crowded places during flu season.",
+    "antonym": "immunity"
+  }
+]
